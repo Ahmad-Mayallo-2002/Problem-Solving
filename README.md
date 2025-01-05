@@ -1,1 +1,1 @@
-# Problem Solving By JavaScript
+# Problem Solving
