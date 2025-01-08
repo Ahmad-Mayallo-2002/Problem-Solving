@@ -1,1 +1,1 @@
-# Problem Solving Repo By JavaScript Programming Language
+# Problem Solving By JavaScript
