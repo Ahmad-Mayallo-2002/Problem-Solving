@@ -4,11 +4,12 @@ const plusOne = (array) => {
     if (array[i] < 9) {
       array[i] += 1;
       return array;
+    } else {
+      array[i] = 0;
     }
-    array[i + 1] = 0;
   }
-  array[0] = 1;
+  if (!array[0]) array.unshift(1);
   return array;
 };
-const array = [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9];
+const array = [9];
 log(plusOne(array));

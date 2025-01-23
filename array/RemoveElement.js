@@ -1,10 +1,15 @@
-import { log } from "console";
+const nums = [0, 1, 2, 2, 3, 0, 4, 2];
 
-const array = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3];
-
-const remove = (array, value) => {
-  for (let i = 0; i < array.length; i++) if (array[i] == value) delete array[i];
+const remove = (nums, val) => {
+  let k = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== val) {
+      nums[k] = nums[i];
+      k++;
+    }
+  }
+  return k;
 };
 
-remove(array, 3);
-log(array);
+remove(nums, 2);
+console.log(nums);
