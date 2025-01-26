@@ -1,32 +1,25 @@
-const array1 = [1, 2, 3, 4];
-const m = 4;
-const array2 = [2, 4, 5, 6, 7];
+let array1 = [4, 5, 6, 0, 0, 0];
+const m = 3;
+let array2 = [2, 4, 5, 6, 7];
 const n = 5;
 
-function swap(prev, next, array) {
-  let temp = array[prev];
-  array[prev] = array[next];
-  array[next] = temp;
-}
-
 function merge(nums1, m, nums2, n) {
-  if (n === 1) {
-    nums1[m] = nums2[0];
-    if (nums1[m - 1] > nums1[m]) swap(m - 1, m, nums1);
-  } else if (!n) {
-    nums1 = nums1;
-  } else {
-    let j = n - 1;
-    for (let i = m + n - 1; i > 0; i--) {
-      if (j >= 0) {
-        nums1[i] = nums2[j];
-        j--;
-      }
-      if (nums1[i - 1] > nums1[i]) swap(i - 1, i, nums1);
+  let first = m - 1;
+  let second = n - 1;
+  let i = m + n - 1;
+  while (second >= 0) {
+    let fVal = nums1[first];
+    let sVal = nums2[second];
+    if (fVal > sVal) {
+      nums1[i] = fVal;
+      first--;
+    } else {
+      nums1[i] = sVal;
+      second--;
     }
+    i--;
   }
 }
 
 merge(array1, m, array2, n);
-
 console.log(array1);

@@ -1,6 +1,6 @@
 const nums = [0, 1, 2, 2, 3, 0, 4, 2];
 
-const remove = (nums, val) => {
+const removeElement = (nums, val) => {
   let k = 0;
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] !== val) {
@@ -11,5 +11,5 @@ const remove = (nums, val) => {
   return k;
 };
 
-remove(nums, 2);
+console.log(removeElement(nums, 2));
 console.log(nums);
