@@ -1,13 +1,8 @@
 function areOccurrencesEqual(string) {
   let object = {};
-  for (let i = 0; i < string.length; i++) {
-    let char = string[i];
-    object[char] = (object[char] || 0) + 1;
-  }
-  let values = Object.values(object);
-  for (let i = 0; i < values.length; i++)
-    if (values[i + 1]) if (values[i] !== values[i + 1]) return false;
-  return true;
+  for (let i = 0; i < string.length; i++)
+    object[string[i]] = (object[string[i]] || 0) + 1;
+  for (const char in object) if (object[char] > 1) return true;
+  return false;
 }
-
-console.log(counterOccurence("abacbc"));
+console.log(areOccurrencesEqual("abcdefb"));
