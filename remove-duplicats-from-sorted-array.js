@@ -13,4 +13,3 @@ function removeDuplicates(nums) {
 }
 
 console.log(removeDuplicates([1, 1, 2]));
-// "Add Remove Duplicates From Sorted Array"
